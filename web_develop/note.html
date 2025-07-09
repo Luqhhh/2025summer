@@ -14,15 +14,79 @@
     <body>
         <header><h1>Note of HTML</h1></header>
 
+        <!--导航栏-->
         <nav>
             <ul>
                 <li><a href="index.html">Homepage</a></li>
             </ul>
         </nav>
 
+        <!--abbraviation-->
         <p>It's my page about <abbr title="HyperText Markup Language">html</abbr> learning.</p>
-
         <hr/>
+
+        <!--button&form-->
+        <form action="./submit_page" method="get">
+            <h2>Subscribe to our members</h2>
+            <p> <!--默认为内联 区分于不同行-->
+                <label for="name">Name (required)</label> <!--for & id-->
+                <input type="text" name="name" id="name" value="User" required/> <!--键名为name属性的值 键值为输入的值-->
+            </p>
+            <p>
+                <label for="email">Email (required)</label>
+                <input type="email" name="email" id="email" required/>
+            </p>
+            <p>
+                <button type="reset">Clear all</button>
+                <button type="submit">Sign up</button>
+            </p>
+        </form>
+        <form action="./payment_page" method="get">
+            <h2>Register for meetup</h2>
+            <fieldset>
+                <legend>Choose hotel room type</legend> <!--整个选项组的说明-->
+                <div> <!--name需相同 作为键名 选中的选项的value为键值 checked为默认-->
+                    <label for="hotelchoice1">Economy(+50$)</label>
+                    <input type="radio" name="hotel" id="hotelchoice1" value="Economy">
+                    <lable for="hotelchoice2">Superior(+80$)</lable>
+                    <input type="radio" name="hotel" id="hotelchoice2" value="Superior">
+                    <label for="hotelchoice3">Penthouse(+120$)</label>
+                    <input type="radio" name="hotel" id="hotelchoice3" value="Penthouse" disabled>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Choose classes to attend</legend>
+                <div> <!--name可不同 value默认为"on" 键值默认为on-->
+                    <label for="yoga">Yoga(+10$)</label>
+                    <input type="checkbox" id="yoga" name="yoga">
+                    <label for="coffee">Coffee roasting(+20$)</label>
+                    <input type="checkbox" id="coffee" name="coffee">
+                    <label for="gardening">Gardening(+15$)</label>
+                    <input type="checkbox" id="gardening" name="gardening">
+                </div>
+            </fieldset>
+            <p>
+                <label for="transport">How are you getting here:</label>
+                <select name="transport" id="transport">
+                    <!--如果没有value 则标签之间的值作为value selected为默认-->
+                    <option value="">--Please choose an option--</option>
+                    <option value="Plane">Plane</option>
+                    <option value="Train">Train</option>
+                    <option value="Bus">Bus</option>
+                    <option value="Taxi">Taxi</option>
+                </select>
+            </p>
+            <p>
+                <!--区别于<input type="text">可输入多行，rows,cols默认值为2，20-->
+                <label for="comments">Any other comment:</label>
+                <textarea id="comments" name="comments" rows="2" cols="20"></textarea>
+            </p>
+            <p>
+                <button>Continue to payment</button>
+            </p>
+        </form>
+        <hr/>
+
         <!--列表：有序/无序列表，描述列表-->
         <ol>
             <li>First:<br/>I wanna show my learning process</li> <!--list item-->
@@ -44,6 +108,7 @@
         </dl>
         <hr/>
 
+        <!--div&figure.figcaption-->
         <div class="figure">
             <img src="images/nailong.jpeg" alt="cute" width="300" height="400"/>
                 <p>a cute boy</p>
@@ -56,16 +121,19 @@
         </figure>
         <hr/>
 
+        <!--vedio-->
         <video controls width="900" height="550"> <!--autoplay preload loop muted poster-->
             <source src="videos/1.mp4" type="video/mp4"> <!--webm-->
             <p>It's my perfect performance in Valorant</p>
         </video>
         <hr/>
 
+        <!--sub&sup-->
         <p id="knowledge">水的化学方程式:H<sub>2</sub>O</p>  <!-- # 加在URL后-->
         <p>x<sup>2</sup>=9----&gt;x=3/-3</p>
         <hr/>
 
+        <!--blockquote&q,cite-->
         <p><a href="https://zh.wikipedia.org/wiki/孔子" target="_blank">孔子</a>名言</p>
         <blockquote cite="https://www.brainyquote.com/authors/confucius-quotes">
            <p>I hear and I forget. I see and I remember. I do and I understand.</p>
@@ -75,15 +143,49 @@
         
         <!--表格布局 表格数据 HTML表格-->
         <table>
-            <tr>
-                <td>&nbsp;</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>4</td>
-            </tr>
-        </table>
+            <caption>Dogs</caption>
+      <tr>
+        <td>&nbsp;</td>
+        <th scope="col">Knocky</th>
+        <th scope="col">Flor</th>
+        <th scope="col">Ella</th>
+        <th scope="col">Juan</th>
+      </tr>
+      <tr>
+        <th scope="row">Breed</th>
+        <td>Jack Russell</td>
+        <td>Poodle</td>
+        <td>Streetdog</td>
+        <td>Cocker Spaniel</td>
+      </tr>
+      <tr>
+        <th scope="row">Age</th>
+        <td>16</td>
+        <td>9</td>
+        <td>10</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <th scope="row">Owner</th>
+        <td>Mother-in-law</td>
+        <td>Me</td>
+        <td>Me</td>
+        <td>Sister-in-law</td>
+      </tr>
+      <tr>
+        <th scope="row" rowspan="2">Eating Habits</th>
+        <td>Eats everyone's leftovers</td>
+        <td>Nibbles at food</td>
+        <td>Hearty eater</td>
+        <td>Will eat till he explodes</td>
+      </tr>
+      <tr>
+        <td>eggs</td>
+        <td>fish</td>
+        <td>pork</td>
+        <td>beef</td>
+      </tr>
+    </table>
         <hr/>
 
         <footer>@luqhh保留所有权利</footer>
